@@ -1,0 +1,5 @@
+13-Mar-24 15:00:49 -  * Debugger is active!
+13-Mar-24 15:00:49 -  * Debugger PIN: 123-265-289
+13-Mar-24 15:00:50 - Информация по заказу
+{'Name': 'Тестов Тестович', 'Email': 'adambat@yandex.ru', 'Phone': '+7 (925) 715-81-17', 'deliveryvar': 'Доставка до адреса* = 500', 'adress': 'fff', 'comment': 'dntc', 'pwz': 'Портовая ул., 20А, Магазин сыров Branden', 'paymentsystem': 'cash', 'payment': {'orderid': '1854158666', 'products': [{'name': 'Саженцы жимолости 5 лет', 'quantity': 1, 'amount': 500, 'externalid': 'qruOv9mighva6mirnO-as2', 'price': '500'}], 'amount': '1000', 'subtotal': '500', 'delivery': 'Доставка до адреса*', 'delivery_price': 500, 'delivery_fio': '', 'delivery_address': '', 'delivery_comment': ''}, 'formid': 'form457266282', 'formname': 'Cart', 'Authorization': 'Z2FyZGVuU3luYw=='}
+13-Mar-24 15:00:52 - 127.0.0.1 - - [13/Mar/2024 15:00:52] "POST /api/make_order HTTP/1.1" 200 -

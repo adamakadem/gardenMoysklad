@@ -1,0 +1,5 @@
+03-May-24 01:38:58 -  * Debugger is active!
+03-May-24 01:38:58 -  * Debugger PIN: 123-265-289
+03-May-24 01:39:00 - Информация по заказу
+{'Authorization': 'Z2FyZGVuU3luYw==', 'COOKIES': 'previousUrl=livenskoe.ru%2Fseedlings; tildasid=1714638615746.487152; tildauid=1714638615746.677274', 'Email': 'maks1492@mail.ru', 'Name': 'Андрей', 'Phone': '+7 (900) 150-14-46', 'adress': 'СТ ветерок. Гурьевский район. Ул. Добрая 23', 'deliveryvar': 'Доставка до адреса* = 1000', 'formid': 'form457266282', 'formname': 'Cart', 'payment': {'amount': '10500', 'delivery': 'Доставка до адреса*', 'delivery_address': '', 'delivery_comment': '', 'delivery_fio': '', 'delivery_price': 1000, 'orderid': '1039654919', 'products': [{'amount': 500, 'externalid': 'qruOv9mighva6mirnO-as2', 'name': 'Саженцы жимолости 5 лет', 'price': '500', 'quantity': 1}, {'amount': 9000, 'externalid': 'OUnasM7zj65t4sDW-zKHV2', 'name': 'Саженцы голубики 4-5 лет', 'price': '4500', 'quantity': 2}], 'subtotal': '9500'}, 'paymentsystem': 'robokassa', 'pwz': 'Портовая ул., 20А, Магазин сыров Branden'}
+03-May-24 01:39:02 - 127.0.0.1 - - [03/May/2024 01:39:02] "POST /api/make_order HTTP/1.1" 200 -

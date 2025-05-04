@@ -1,0 +1,5 @@
+04-May-24 18:40:49 -  * Debugger is active!
+04-May-24 18:40:49 -  * Debugger PIN: 123-265-289
+04-May-24 18:40:49 - Информация по заказу
+{'Authorization': '{TGRXbfY3$MdL@?k', 'Email': 'adambat@yandex.ru', 'Name': 'Тестов Тестович', 'Phone': '+7 (925) 715-81-17', 'adress': 'Тест', 'comment': 'коммент', 'deliveryvar': 'Доставка до адреса* = 1000', 'formid': 'form742815545', 'formname': 'Cart', 'payment': {'amount': '11500', 'delivery': 'Доставка до адреса*', 'delivery_address': '', 'delivery_comment': '', 'delivery_fio': '', 'delivery_price': 1000, 'orderid': '1464198304', 'products': [{'amount': 500, 'externalid': 'qruOv9mighva6mirnO-as2', 'name': 'Саженцы жимолости 5 лет', 'price': '500', 'quantity': 1}, {'amount': 10000, 'externalid': 'cr2f7MU8ivm6580KWOu4e3', 'name': 'Саженцы клубники кассета 64 шт', 'price': '2000', 'quantity': 5}], 'subtotal': '10500'}, 'paymentsystem': 'cash'}
+04-May-24 18:40:52 - 127.0.0.1 - - [04/May/2024 18:40:52] "POST /api/make_order HTTP/1.1" 200 -

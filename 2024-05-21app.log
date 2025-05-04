@@ -1,0 +1,5 @@
+21-May-24 22:45:31 -  * Debugger is active!
+21-May-24 22:45:31 -  * Debugger PIN: 123-265-289
+21-May-24 22:45:33 - Информация по заказу
+{'Authorization': 'Z2FyZGVuU3luYw==', 'COOKIES': 'previousUrl=livenskoe.ru%2Fberries; tildasid=1716312175460.899581; tildauid=1716312175460.128442', 'Email': 'franky9@mail.ru', 'Name': 'Дарья', 'Phone': '+7 (911) 855-17-02', 'adress': 'Калининград, Н. Карамзина, д. 36, кв. 115, 4 этаж', 'deliveryvar': 'Доставка до адреса* = 500', 'formid': 'form457266282', 'formname': 'Cart', 'payment': {'amount': '2600', 'delivery': 'Доставка до адреса*', 'delivery_address': '', 'delivery_comment': '', 'delivery_fio': '', 'delivery_price': 500, 'orderid': '1072729481', 'products': [{'amount': 2100, 'externalid': 'ZIKpw6YKiKx3oLLP3bfp01', 'name': 'Клубника свежая 1 кг', 'price': '700', 'quantity': 3}], 'subtotal': '2100'}, 'paymentsystem': 'robokassa', 'pwz': 'Портовая ул., 20А, Магазин сыров Branden'}
+21-May-24 22:45:35 - 127.0.0.1 - - [21/May/2024 22:45:35] "POST /api/make_order HTTP/1.1" 200 -

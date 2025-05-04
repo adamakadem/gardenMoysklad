@@ -1,0 +1,279 @@
+{
+    "context": {
+        "employee": {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/context/employee",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json"
+            }
+        }
+    },
+    "meta": {
+        "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/f82e8d0a-475a-11ea-0a80-05f6000af4e6",
+        "type": "customentity",
+        "mediaType": "application/json",
+        "uuidHref": "https://api.moysklad.ru/app/#custom_f82e8d0a-475a-11ea-0a80-05f6000af4e6",
+        "size": 8,
+        "limit": 1000,
+        "offset": 0
+    },
+    "rows": [
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/f82e8d0a-475a-11ea-0a80-05f6000af4e6/1e49c39f-4cfd-11ea-0a80-0525000cf292",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/f82e8d0a-475a-11ea-0a80-05f6000af4e6",
+                "type": "customentity",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#custom_f82e8d0a-475a-11ea-0a80-05f6000af4e6/edit?id=1e49c39f-4cfd-11ea-0a80-0525000cf292"
+            },
+            "id": "1e49c39f-4cfd-11ea-0a80-0525000cf292",
+            "accountId": "379fe835-473c-11ea-0a80-04bd00002ed4",
+            "updated": "2020-07-07 19:59:11.032",
+            "name": "Доставка в ПВЗ Леонова, 58",
+            "externalCode": "PrCo-lhng0iIe8gk2p3Y12",
+            "owner": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/37b25ebb-473c-11ea-0a80-05f60006e4ec",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "type": "employee",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=37b25ebb-473c-11ea-0a80-05f60006e4ec"
+                }
+            },
+            "shared": true,
+            "group": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/37a03e7f-473c-11ea-0a80-04bd00002ed5",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            }
+        },
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/f82e8d0a-475a-11ea-0a80-05f6000af4e6/3dd5e9af-c6ba-11eb-0a80-065a001eb587",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/f82e8d0a-475a-11ea-0a80-05f6000af4e6",
+                "type": "customentity",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#custom_f82e8d0a-475a-11ea-0a80-05f6000af4e6/edit?id=3dd5e9af-c6ba-11eb-0a80-065a001eb587"
+            },
+            "id": "3dd5e9af-c6ba-11eb-0a80-065a001eb587",
+            "accountId": "379fe835-473c-11ea-0a80-04bd00002ed4",
+            "updated": "2021-06-06 14:27:56.855",
+            "name": "Доставка ПВЗ Портовая 20А",
+            "externalCode": "fhFRucuxhJEVAC77QGWav2",
+            "owner": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/37b25ebb-473c-11ea-0a80-05f60006e4ec",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "type": "employee",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=37b25ebb-473c-11ea-0a80-05f60006e4ec"
+                }
+            },
+            "shared": false,
+            "group": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/37a03e7f-473c-11ea-0a80-04bd00002ed5",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            }
+        },
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/f82e8d0a-475a-11ea-0a80-05f6000af4e6/41f80446-c073-11ea-0a80-03f000003a8f",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/f82e8d0a-475a-11ea-0a80-05f6000af4e6",
+                "type": "customentity",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#custom_f82e8d0a-475a-11ea-0a80-05f6000af4e6/edit?id=41f80446-c073-11ea-0a80-03f000003a8f"
+            },
+            "id": "41f80446-c073-11ea-0a80-03f000003a8f",
+            "accountId": "379fe835-473c-11ea-0a80-04bd00002ed4",
+            "updated": "2020-07-07 20:05:12.857",
+            "name": "Самовывоз Клюквенное",
+            "externalCode": "mukmlk7ViojQaM94AXB0L2",
+            "owner": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/37b25ebb-473c-11ea-0a80-05f60006e4ec",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "type": "employee",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=37b25ebb-473c-11ea-0a80-05f60006e4ec"
+                }
+            },
+            "shared": false,
+            "group": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/37a03e7f-473c-11ea-0a80-04bd00002ed5",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            }
+        },
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/f82e8d0a-475a-11ea-0a80-05f6000af4e6/4af78618-c073-11ea-0a80-03f000003acb",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/f82e8d0a-475a-11ea-0a80-05f6000af4e6",
+                "type": "customentity",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#custom_f82e8d0a-475a-11ea-0a80-05f6000af4e6/edit?id=4af78618-c073-11ea-0a80-03f000003acb"
+            },
+            "id": "4af78618-c073-11ea-0a80-03f000003acb",
+            "accountId": "379fe835-473c-11ea-0a80-04bd00002ed4",
+            "updated": "2020-07-07 19:59:59.972",
+            "name": "Доставка в ПВЗ Куйбышева, 40",
+            "externalCode": "gU4CWBDuhOBjrFKKFiu2D2",
+            "owner": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/37b25ebb-473c-11ea-0a80-05f60006e4ec",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "type": "employee",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=37b25ebb-473c-11ea-0a80-05f60006e4ec"
+                }
+            },
+            "shared": false,
+            "group": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/37a03e7f-473c-11ea-0a80-04bd00002ed5",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            }
+        },
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/f82e8d0a-475a-11ea-0a80-05f6000af4e6/7060557a-475c-11ea-0a80-05f6000b1e4a",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/f82e8d0a-475a-11ea-0a80-05f6000af4e6",
+                "type": "customentity",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#custom_f82e8d0a-475a-11ea-0a80-05f6000af4e6/edit?id=7060557a-475c-11ea-0a80-05f6000b1e4a"
+            },
+            "id": "7060557a-475c-11ea-0a80-05f6000b1e4a",
+            "accountId": "379fe835-473c-11ea-0a80-04bd00002ed4",
+            "updated": "2020-02-04 17:41:33.612",
+            "name": "Доставка по адресу",
+            "externalCode": "9bNFHdGbgsjxPzuw2VaJU2",
+            "owner": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/37b25ebb-473c-11ea-0a80-05f60006e4ec",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "type": "employee",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=37b25ebb-473c-11ea-0a80-05f60006e4ec"
+                }
+            },
+            "shared": true,
+            "group": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/37a03e7f-473c-11ea-0a80-04bd00002ed5",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            }
+        },
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/f82e8d0a-475a-11ea-0a80-05f6000af4e6/767d9de9-475c-11ea-0a80-0106000b2453",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/f82e8d0a-475a-11ea-0a80-05f6000af4e6",
+                "type": "customentity",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#custom_f82e8d0a-475a-11ea-0a80-05f6000af4e6/edit?id=767d9de9-475c-11ea-0a80-0106000b2453"
+            },
+            "id": "767d9de9-475c-11ea-0a80-0106000b2453",
+            "accountId": "379fe835-473c-11ea-0a80-04bd00002ed4",
+            "updated": "2020-07-07 19:58:59.563",
+            "name": "Доставка в ПВЗ Багратиона, 100",
+            "externalCode": "8JuhvLABgPipUUIll7PoL0",
+            "owner": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/37b25ebb-473c-11ea-0a80-05f60006e4ec",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "type": "employee",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=37b25ebb-473c-11ea-0a80-05f60006e4ec"
+                }
+            },
+            "shared": true,
+            "group": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/37a03e7f-473c-11ea-0a80-04bd00002ed5",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            }
+        },
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/f82e8d0a-475a-11ea-0a80-05f6000af4e6/7a8dc939-475c-11ea-0a80-0215000a90d9",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/f82e8d0a-475a-11ea-0a80-05f6000af4e6",
+                "type": "customentity",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#custom_f82e8d0a-475a-11ea-0a80-05f6000af4e6/edit?id=7a8dc939-475c-11ea-0a80-0215000a90d9"
+            },
+            "id": "7a8dc939-475c-11ea-0a80-0215000a90d9",
+            "accountId": "379fe835-473c-11ea-0a80-04bd00002ed4",
+            "updated": "2023-01-23 02:48:47.032",
+            "name": "Самовывоз пос.Ливенское",
+            "externalCode": "5h2E97K5jgG2JZ35f1q9k0",
+            "owner": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/37b25ebb-473c-11ea-0a80-05f60006e4ec",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "type": "employee",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=37b25ebb-473c-11ea-0a80-05f60006e4ec"
+                }
+            },
+            "shared": true,
+            "group": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/37a03e7f-473c-11ea-0a80-04bd00002ed5",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            }
+        },
+        {
+            "meta": {
+                "href": "https://api.moysklad.ru/api/remap/1.2/entity/customentity/f82e8d0a-475a-11ea-0a80-05f6000af4e6/7ecd9967-28c1-11ee-0a80-08dc001dbde4",
+                "metadataHref": "https://api.moysklad.ru/api/remap/1.2/context/companysettings/metadata/customEntities/f82e8d0a-475a-11ea-0a80-05f6000af4e6",
+                "type": "customentity",
+                "mediaType": "application/json",
+                "uuidHref": "https://api.moysklad.ru/app/#custom_f82e8d0a-475a-11ea-0a80-05f6000af4e6/edit?id=7ecd9967-28c1-11ee-0a80-08dc001dbde4"
+            },
+            "id": "7ecd9967-28c1-11ee-0a80-08dc001dbde4",
+            "accountId": "379fe835-473c-11ea-0a80-04bd00002ed4",
+            "updated": "2023-07-22 21:56:41.668",
+            "name": "ПВЗ Октябрьская 12",
+            "externalCode": "1AtuTqrIiVXm0wB67EKe40",
+            "owner": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/employee/37b25ebb-473c-11ea-0a80-05f60006e4ec",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/employee/metadata",
+                    "type": "employee",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://api.moysklad.ru/app/#employee/edit?id=37b25ebb-473c-11ea-0a80-05f60006e4ec"
+                }
+            },
+            "shared": false,
+            "group": {
+                "meta": {
+                    "href": "https://api.moysklad.ru/api/remap/1.2/entity/group/37a03e7f-473c-11ea-0a80-04bd00002ed5",
+                    "metadataHref": "https://api.moysklad.ru/api/remap/1.2/entity/group/metadata",
+                    "type": "group",
+                    "mediaType": "application/json"
+                }
+            }
+        }
+    ]
+}

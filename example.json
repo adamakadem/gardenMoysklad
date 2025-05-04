@@ -1,0 +1,37 @@
+{
+  "Name": "адам",
+  "Email": "adamakadem@gmail.com",
+  "Phone": "+7 (921) 851-75-27",
+  "paymentsystem": "cash",
+  "payment": {
+    "orderid": "1943830903",
+    "products": [
+      {
+        "name": "Голубика свежая",
+        "quantity": 1,
+        "amount": 275,
+        "externalid": "oBVErL1Nicb2AFQgeAdle0",
+        "price": "275"
+      },
+      {
+        "name": "Клубника свежая",
+        "quantity": 1,
+        "amount": 400,
+        "externalid": "GndnH9XPGmlv7lxPCBfi",
+        "price": "400"
+      }
+    ],
+    "amount": "675",
+    "subtotal": "675",
+    "delivery": "Самовывоз пос.Ливенское",
+    "delivery_price": 0,
+    "delivery_fio": "",
+    "delivery_address": "RU: Point: Калининград, Краснознаменский МО, ул.Заречная 12А (Плантация Ливенское)101000, Москва",
+    "delivery_comment": "",
+    "delivery_pickup_id": "1",
+    "delivery_zip": "101000"
+  },
+  "formid": "form457266282",
+  "formname": "Cart",
+  "Authorization": "Z2FyZGVuU3luYw=="
+}

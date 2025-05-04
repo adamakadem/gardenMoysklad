@@ -1,0 +1,5 @@
+14-May-24 04:17:31 -  * Debugger is active!
+14-May-24 04:17:31 -  * Debugger PIN: 123-265-289
+14-May-24 04:17:33 - Информация по заказу
+{'Authorization': 'Z2FyZGVuU3luYw==', 'Email': 'adambat@yandex.ru', 'Name': 'Тестов Тестович', 'Phone': '+7 (925) 715-81-17', 'deliveryvar': 'Доставка до Пункта Выдачи Заказов (недоступно для саженцев) = 0', 'formid': 'form457266282', 'formname': 'Cart', 'payment': {'amount': '2000', 'delivery': 'Доставка до Пункта Выдачи Заказов (недоступно для саженцев)', 'delivery_address': '', 'delivery_comment': '', 'delivery_fio': '', 'delivery_price': 0, 'orderid': '1615469414', 'products': [{'amount': 2000, 'externalid': 'cr2f7MU8ivm6580KWOu4e3', 'name': 'Саженцы клубники кассета 64 шт', 'price': '2000', 'quantity': 1}], 'subtotal': '2000'}, 'paymentsystem': 'cash', 'pwz': 'Портовая ул., 20А, Магазин сыров Branden'}
+14-May-24 04:17:34 - 127.0.0.1 - - [14/May/2024 04:17:34] "POST /api/make_order HTTP/1.1" 200 -
