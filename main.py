@@ -20,6 +20,8 @@ if __name__ == "__main__":
 def make_order(data=None):
     try:
         log_helper.log.info('Старт процесса создания заказа ')
+        print(data)
+        print(request.json)
         if data:
             req_data = data
         else:
