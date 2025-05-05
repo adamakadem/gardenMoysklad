@@ -19,14 +19,15 @@ if __name__ == "__main__":
 @app.route("/api/make_order", methods=['POST'])
 def make_order(data=None):
     try:
-        log_helper.log.info('Информация по заказу ' + data['Authorization'])
+        log_helper.log.info('Старт процесса создания заказа ')
         if data:
             req_data = data
         else:
             req_data = request.json
-        log_helper.log.info('Информация по заказу\n' + str(req_data))
+        
         if 'test' in req_data:
             return make_response('good', 200)
+        log_helper.log.info('Информация по заказу\n' + str(req_data))
         auth_check = False
         if req_data['Authorization'] == config.authorization_token or req_data[
             'Authorization'] == config.authorization_token_sazh:
