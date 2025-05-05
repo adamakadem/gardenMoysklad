@@ -19,7 +19,7 @@ if __name__ == "__main__":
 @app.route("/api/make_order", methods=['POST'])
 def make_order(data=None):
     try:
-        log_helper.log.info('Информация по заказу\n')
+        log_helper.log.info('Информация по заказу ' + data['Authorization'])
         if data:
             req_data = data
         else:
