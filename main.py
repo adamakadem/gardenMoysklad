@@ -24,10 +24,10 @@ def make_order(data=None):
             req_data = data
         else:
             req_data = request.json
+        log_helper.log.info('Информация по заказу\n' + str(req_data))
         if 'test' in req_data:
             return make_response('good', 200)
         auth_check = False
-        log_helper.log.info('Информация по заказу\n' + str(req_data))
         if req_data['Authorization'] == config.authorization_token or req_data[
             'Authorization'] == config.authorization_token_sazh:
             auth_check = True
