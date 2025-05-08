@@ -18,6 +18,8 @@ def append_delivery(addre, pwz=None):
         addr = 'Доставка ПВЗ Портовая 20А'
     if 'Заказов' in addr and 'ктябрь' in pwz:
         addr = 'ПВЗ Октябрьская 12'
+    if 'Заказов' in addr and 'Зеленог' in pwz:
+        addr = 'ПВЗ Зеленоградск'
     addr_obj = config.attribute_static
     checker = False
     try:
