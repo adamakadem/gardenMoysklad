@@ -1,12 +1,14 @@
 import json
+import logging
 import sys
-
+import logging
 import requests
 import log_helper
 import config
 
 
 def append_delivery(addre, pwz=None):
+    logging.info(addre)
     addr = addre
     if addr == '':
         return False
@@ -18,8 +20,6 @@ def append_delivery(addre, pwz=None):
         addr = 'Доставка ПВЗ Портовая 20А'
     if 'Заказов' in addr and 'ктябрь' in pwz:
         addr = 'ПВЗ Октябрьская 12'
-    if 'Заказов' in addr and 'Зеленог' in pwz:
-        addr = 'ПВЗ Зеленоградск'
     addr_obj = config.attribute_static
     checker = False
     try:
@@ -42,6 +42,8 @@ def append_delivery(addre, pwz=None):
 
 
 def append_delivery_item(delivery, payload_num, delivery_price):
+    logging.info(delivery)
+    logging.info(payload_num)
     prep_item = {
         "quantity": 1,
         "reserve": 1,
@@ -82,7 +84,8 @@ def append_delivery_item(delivery, payload_num, delivery_price):
                     prep_item['price'] = 70000
         return prep_item
     elif 'адрес' in delivery:
-
+        print('Здесь доставка' + delivery)
+        logging.info(delivery)
         if payload_num == 2:
             prep_item["assortment"] = {
                 "meta": {
@@ -97,6 +100,7 @@ def append_delivery_item(delivery, payload_num, delivery_price):
                 except:
                     prep_item['price'] = 100000
         else:
+            logging.info('delivery_price ELSE')
             prep_item["assortment"] = {
                 "meta": {
                     "href": "https://api.moysklad.ru/api/remap/1.2/entity/product/" + config.delivery_address_service_other,
@@ -104,11 +108,15 @@ def append_delivery_item(delivery, payload_num, delivery_price):
                     "mediaType": "application/json"
                 }}
             if delivery_price != 0:
+                logging.info('delivery_price != 0')
                 try:
-                    resp = requests.get(url=prep_item["assortment"]['meta']['href'], headers=config.headers)
+                    url= prep_item["assortment"]['meta']['href']
+                    logging.info(url)
+                    resp = requests.get(url=prep_item["assortment"]['meta']['href'], headers=config.headers).json()
                     prep_item['price'] = resp['salePrices'][0]['value']
+                    logging.info(str(resp))
                 except:
-                    prep_item['price'] = 50000
+                    prep_item['price'] = 70000
         return prep_item
     else:
         log_helper.log.error('Тип доставки не определен')
