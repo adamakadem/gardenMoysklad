@@ -134,9 +134,9 @@ def make_payload_for_order(data, client_id):
     del_address = ''
     attribute_for_sms = ''
     print('привеееетииккии')
-    if data['payment']['delivery'].startswith('Доставка до адреса'):
+    if data['']['delivery'].startswith('Доставка до адреса'):
         del_address = data['adress']
-    elif 'Выдач' in data['payment']['delivery']:
+    elif 'Выдач' in data['']['delivery']:
         if 'pwz' in data:
             attribute_for_sms = config.attribute_delivery_addr_pwz
             attribute_for_sms['value'] = data['pwz']
@@ -213,12 +213,12 @@ def make_payload_for_order(data, client_id):
     # добавляем order_id для дальнейшей идентификации на робокассе
     order_id1 = config.attribute_order_id
     order_id2 = config.attribute_order_id
-    order_id1['value'] = data['payment']['orderid']
-    order_id2['value'] = data['payment']['orderid']
+    order_id1['value'] = data['']['orderid']
+    order_id2['value'] = data['']['orderid']
     payload2['attributes'].append(order_id1)
     payload1['attributes'].append(order_id2)
 
-    if 'promocode' in data['payment']:
+    if 'promocode' in data['']:
         promocode_value = config.attribute_promocode
         promocode_value['value'] = data['payment']['promocode']
         payload2['attributes'].append(promocode_value)
@@ -505,10 +505,11 @@ def submit_order():
     if 'Authorization' in req_data:
         if req_data['Authorization'] == config.authorization_token or req_data['Authorization'] == config.authorization_token_sazh:
             auth_check = True
-    if req_data['paymentsystem'] == 'cash':
-        print(req_data['payment']['orderid'])
-        print('Оплата не по карте')
-        return make_response('Оплата не по карте', 200)
+    
+    if 'paymentsystem' in req_data:
+        if req_data['paymentsystem'] == 'cash':
+            print('Оплата не по карте')
+            return make_response('Оплата не по карте', 200)
     if auth_check and 'sys' in req_data['payment']:
         if req_data['payment']['sys'] == 'robokassa':
             print(req_data['payment']['orderid'])
