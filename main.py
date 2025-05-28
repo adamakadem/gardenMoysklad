@@ -19,17 +19,12 @@ if __name__ == "__main__":
 @app.route("/api/make_order", methods=['POST'])
 def make_order(data=None):
     try:
-        log_helper.log.info('Старт процесса создания заказа ')
-        print(data)
-        print(request.json)
         if data:
             req_data = data
         else:
             req_data = request.json
-        
         if 'test' in req_data:
             return make_response('good', 200)
-        log_helper.log.info('Информация по заказу\n' + str(req_data))
         auth_check = False
         if req_data['Authorization'] == config.authorization_token or req_data[
             'Authorization'] == config.authorization_token_sazh:
@@ -138,9 +133,9 @@ def make_payload_for_order(data, client_id):
     del_address = ''
     attribute_for_sms = ''
     print('привеееетииккии')
-    if data['']['delivery'].startswith('Доставка до адреса'):
+    if data['payment']['delivery'].startswith('Доставка до адреса'):
         del_address = data['adress']
-    elif 'Выдач' in data['']['delivery']:
+    elif 'Выдач' in data['payment']['delivery']:
         if 'pwz' in data:
             attribute_for_sms = config.attribute_delivery_addr_pwz
             attribute_for_sms['value'] = data['pwz']
@@ -148,7 +143,6 @@ def make_payload_for_order(data, client_id):
         #     address = address.replace('RU: ', '').replace('Point: ', '')
         # except:
         #     print(str(str(datetime.datetime.now()))) print('нечего удалять')
-    print(del_address)
     # Для всего остального
     payload1 = {
         "organization": {
@@ -217,12 +211,12 @@ def make_payload_for_order(data, client_id):
     # добавляем order_id для дальнейшей идентификации на робокассе
     order_id1 = config.attribute_order_id
     order_id2 = config.attribute_order_id
-    order_id1['value'] = data['']['orderid']
-    order_id2['value'] = data['']['orderid']
+    order_id1['value'] = data['payment']['orderid']
+    order_id2['value'] = data['payment']['orderid']
     payload2['attributes'].append(order_id1)
     payload1['attributes'].append(order_id2)
 
-    if 'promocode' in data['']:
+    if 'promocode' in data['payment']:
         promocode_value = config.attribute_promocode
         promocode_value['value'] = data['payment']['promocode']
         payload2['attributes'].append(promocode_value)
@@ -264,7 +258,6 @@ def make_payload_for_order(data, client_id):
         except:
             discount = 0
     for idx in products_arr:
-        print(idx['quantity'])
         prep_item = {
             "quantity": idx['quantity'],
             "reserve": idx['quantity'],
@@ -279,7 +272,6 @@ def make_payload_for_order(data, client_id):
                     "mediaType": "application/json"
                 }}}
         if 'productFolder' in idx['item']['rows'][0]:
-            print(idx['item']['rows'][0])
             if idx['item']['rows'][0]['productFolder']['meta']['href'][-36:] == config.seedling_product_folder_id:
                 payload2['positions'].append(prep_item)
             else:
@@ -295,8 +287,6 @@ def make_payload_for_order(data, client_id):
             payload_arr.append(payload1)
             print('вот тут вот')
         else:
-            print(data['payment']['delivery'])
-            print(data['payment'])
             payload2['positions'].append(
                 dc.append_delivery_item(data['payment']['delivery'], 2, data['payment']['delivery_price']))
             payload_arr.append(payload2)
@@ -306,9 +296,6 @@ def make_payload_for_order(data, client_id):
         payload1['positions'].append(
             dc.append_delivery_item(data['payment']['delivery'], 1, data['payment']['delivery_price']))
         payload_arr.append(payload1)
-        print('-------')
-        print(payload1)
-        print('--------')
         if payload2['positions']:
             payload2['positions'].append(
                 dc.append_delivery_item(data['payment']['delivery'], 2, data['payment']['delivery_price']))
@@ -363,7 +350,6 @@ def create_client_in_mc(phone, name, email, address):
                     'actualAddress': address,
                     'email': email
                 }
-                print(payload)
                 response = requests.request("PUT", url_part, data=json.dumps(payload), headers=headers)
                 print(response.status_code)
                 if response.status_code == 200:
@@ -452,10 +438,6 @@ def create_invoice(client_id, sum, operations, order_id, mc_orders, total, phone
         if res.status_code == 200:
             return res.json()['id']
         else:
-            try:
-                print(res.json())
-            except:
-                print(res.status_code)
             log_helper.log.error('Запрос на создание платежа неудачный. Код ответа ' + str(res.status_code))
             print('Запрос на создание платежа неудачный')
             return False
@@ -481,7 +463,6 @@ def change_order_state(ord_id, state_id):
                 "mediaType": "application/json"
             }}
     })
-    print(payload)
     try:
         resp = requests.put(url=url, headers=headers, data=payload)
         if resp.status_code == 200:
@@ -502,21 +483,18 @@ def change_order_state(ord_id, state_id):
 @app.route("/api/submit_payment", methods=['POST'])
 def submit_order():
     req_data = request.json
-    print(req_data)
     if 'test' in req_data:
         return make_response('good', 200)
     auth_check = False
     if 'Authorization' in req_data:
         if req_data['Authorization'] == config.authorization_token or req_data['Authorization'] == config.authorization_token_sazh:
             auth_check = True
-    
     if 'paymentsystem' in req_data:
         if req_data['paymentsystem'] == 'cash':
             print('Оплата не по карте')
             return make_response('Оплата не по карте', 200)
     if auth_check and 'sys' in req_data['payment']:
         if req_data['payment']['sys'] == 'robokassa':
-            print(req_data['payment']['orderid'])
             orders = find_orders_with_id(req_data['payment']['orderid'])
             if not orders:
                 make_order(data=req_data)
@@ -563,12 +541,9 @@ def submit_order():
                     change_order_state(idx['id'], config.state_error_payment_id)
                 return make_response('Не удалось создать входящий платеж', 200)
         else:
-            print(req_data['payment']['orderid'])
             print('Оплата не по карте')
             return make_response('Оплата не по карте', 200)
     else:
-        print('aloooooo')
-        print(req_data)
         print('Нет информации от робокассы')
         log_helper.log.error('Не удалось создать входящий платеж из-за отсутствия sys или неккоретного ключа')
         return make_response('Не удалось создать входящий платеж из-за отсутствия sys или неккоретного ключа', 500)
