@@ -493,53 +493,57 @@ def submit_order():
         if req_data['paymentsystem'] == 'cash':
             print('Оплата не по карте')
             return make_response('Оплата не по карте', 200)
-    if auth_check and 'sys' in req_data['payment']:
-        if req_data['payment']['sys'] == 'robokassa':
-            orders = find_orders_with_id(req_data['payment']['orderid'])
-            if not orders:
-                make_order(data=req_data)
-                orders = find_orders_with_id(req_data['payment']['orderid'])
-                if not orders:
-                    return make_response(
-                        'Ошибка при создании оплаты по заказу - заказ не был найден' + str(datetime.datetime.now()),
-                        200)
+    log_helper.log.info("Информация об оплате")
+    log_helper.log.info(req_data)
+    if auth_check:
+        if 'payment' in req_data:
+            if 'sys' in req_data['payment']:
+                if req_data['payment']['sys'] == 'robokassa':
+                    orders = find_orders_with_id(req_data['payment']['orderid'])
+                    if not orders:
+                        make_order(data=req_data)
+                        orders = find_orders_with_id(req_data['payment']['orderid'])
+                        if not orders:
+                            return make_response(
+                                'Ошибка при создании оплаты по заказу - заказ не был найден' + str(datetime.datetime.now()),
+                                200)    
 
-            orders_arr = []
-            sum = 0
-            client_id = orders['rows'][0]['agent']['meta']['href']
-            diff = int(float(req_data['payment']['amount']) * 100)
-            if len(orders['rows']) == 2:
-                try:
-                    if int(orders['rows'][0]['name']) > int(orders['rows'][1]['name']):
-                        if int(orders['rows'][0]['sum']) > diff:
-                            print('сумма платежа больше ')
+                    orders_arr = []
+                    sum = 0
+                    client_id = orders['rows'][0]['agent']['meta']['href']
+                    diff = int(float(req_data['payment']['amount']) * 100)
+                    if len(orders['rows']) == 2:
+                        try:
+                            if int(orders['rows'][0]['name']) > int(orders['rows'][1]['name']):
+                                if int(orders['rows'][0]['sum']) > diff:
+                                    print('сумма платежа больше ')
+                                else:
+                                    temp_item = orders['rows'][1]
+                                    orders['rows'][1] = orders['rows'][0]
+                                    orders['rows'][0] = temp_item
+                        except:
+                            print('сортировка не требуется')
+                    for item in orders['rows']:
+                        sum += int(item['sum'])
+                        if diff - int(item['sum']) >= 0:
+                            orders_arr.append({'meta': item['meta'], 'linkedSum': int(item['sum'])})
+                            diff = diff - int(item['sum'])
+                            change_order_state(item['id'], config.state_approve_id)
                         else:
-                            temp_item = orders['rows'][1]
-                            orders['rows'][1] = orders['rows'][0]
-                            orders['rows'][0] = temp_item
-                except:
-                    print('сортировка не требуется')
-            for item in orders['rows']:
-                sum += int(item['sum'])
-                if diff - int(item['sum']) >= 0:
-                    orders_arr.append({'meta': item['meta'], 'linkedSum': int(item['sum'])})
-                    diff = diff - int(item['sum'])
-                    change_order_state(item['id'], config.state_approve_id)
-                else:
-                    orders_arr.append({'meta': item['meta'], 'linkedSum': diff})
-                    change_order_state(item['id'], config.state_new_id)
-            invoice = create_invoice(client_id=client_id, sum=int(float(req_data['payment']['amount']) * 100),
-                                     operations=orders_arr, order_id=req_data['payment']['orderid'], mc_orders=orders,
-                                     total=sum, phone=req_data['Phone'], name=req_data['Name'])
-            if invoice:
-                requests.get(
-                    url='https://alarma.msapps.ru/notifications/webhook/379fe835-473c-11ea-0a80-04bd00002ed4/418/?type={type}&id={id}'.format(
-                        type='paymentin', id=invoice))
-                return make_response('Входящий платеж успешно создан', 200)
-            else:
-                for idx in orders['rows']:
-                    change_order_state(idx['id'], config.state_error_payment_id)
-                return make_response('Не удалось создать входящий платеж', 200)
+                            orders_arr.append({'meta': item['meta'], 'linkedSum': diff})
+                            change_order_state(item['id'], config.state_new_id)
+                    invoice = create_invoice(client_id=client_id, sum=int(float(req_data['payment']['amount']) * 100),
+                                             operations=orders_arr, order_id=req_data['payment']['orderid'], mc_orders=orders,
+                                             total=sum, phone=req_data['Phone'], name=req_data['Name'])
+                    if invoice:
+                        requests.get(
+                            url='https://alarma.msapps.ru/notifications/webhook/379fe835-473c-11ea-0a80-04bd00002ed4/418/?type={type}&id={id}'.format(
+                                type='paymentin', id=invoice))
+                        return make_response('Входящий платеж успешно создан', 200)
+                    else:
+                        for idx in orders['rows']:
+                            change_order_state(idx['id'], config.state_error_payment_id)
+                        return make_response('Не удалось создать входящий платеж', 200)
         else:
             print('Оплата не по карте')
             return make_response('Оплата не по карте', 200)
