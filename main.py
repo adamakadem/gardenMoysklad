@@ -37,6 +37,10 @@ def make_order(data=None):
         if auth_check:
             log_helper.log.info('Информация по заказу\n' + str(req_data))
             address = ''
+            if 'formid' in req_data:
+                if req_data['formid'] == 'form743975566':
+                    log_helper.log.info('Отзыв')
+                    return make_response('Это отзыв', 200)
             if str(req_data['payment']['delivery']).startswith('Доставка до адрес'):
                 if 'adress' in req_data:
                     address = req_data['adress']
